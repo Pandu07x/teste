@@ -1,0 +1,61 @@
+<div class="w-100 cards__row">
+       
+    </div>
+    
+
+<div class="row mt-3">
+    <!-- <div class="col-12 mb-4">
+        <div class="card">
+            <fusioncharts width="100%" theme="fusion" [height]="'400'" type="gantt" [dataFormat]="dataFormat"
+                [dataSource]="dataSource2">
+            </fusioncharts>
+        </div>
+    </div> -->
+    <div *ngFor="let item of testBenchList;let i = index" routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card overflow-hidden border-5  border-success 5">
+            <div class="d-flex text-center justify-content-center p-3">
+                <div>
+                    {{item}} 
+                </div>
+            </div>
+            <div [ngClass]="testBenchStatus[item] == true?'bg_success':'bg-danger'" class="card__footer  bg-success">
+
+            </div>
+        </div>
+    </div>
+    <!-- <div routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card p-5">
+            Test Bench 2
+        </div>
+    </div>
+    <div routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card p-5">
+            Test Bench 3
+        </div>
+    </div>
+    <div routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card p-5">
+            Test Bench 4
+        </div>
+    </div>
+    <div routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card p-5">
+            Test Bench 5
+        </div>
+    </div>
+    <div routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card p-5">
+            Test Bench 6
+        </div>
+    </div>
+    <div routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card p-5">
+            Test Bench 7
+        </div>
+    </div>
+    <div routerLink="/home/testbenchdashboard" class="test-bench-card col-3 mb-4">
+        <div class="card p-5">
+            Test Bench 8
+        </div>
+    </div> -->
+</div>

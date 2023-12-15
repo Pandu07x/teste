@@ -1,0 +1,70 @@
+<!-- <div class="d-flex h-100 align-items-center">
+    <form [formGroup]="formData" (ngSubmit)="logIN()" class="container w-100 card bg-light p-3 ">
+        <div class="d-flex justify-content-between w-100 gap-5">
+            <div class="d-flex justify-content-center w-100  align-items-center">
+                <img src="../../../assets/images/IEX.png" width="100%"  height="auto" alt="">
+            </div>
+            <div  class="d-flex justify-content-center w-100 align-items-center flex-column">
+                <h1>User LogIn</h1>
+                <div class="form-group w-100 mt-4 mb-3">
+                    <input formControlName="userName" type="text" class="form-control" placeholder="Add UserName">
+                </div>
+                <div class="form-group w-100  mb-4">
+                    <input formControlName="password" type="password" class="form-control" placeholder="Add Password">
+                    <div *ngIf="passwordControl.hasError('passwordComplexity') && passwordControl.touched" class="text-danger">
+                        <p>**Password must contain**</p>
+                        <p>at least one uppercase letter,  one number, one special character, one lowercase letter</p>
+                     </div>
+                </div>
+                <div class="form-group w-100  mb-3">
+                    <button class="btn btn-primary w-100" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+        
+        {{response}}
+    </form>
+</div> -->
+
+	<!-- Main Content -->
+	<div class="container-fluid">
+		<div class="row main-content text-center">
+			<div class="col-md-4 text-center company__info">
+				<span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
+                <img src="../../../assets//images/IEX.png">
+				<h4 class="company_title"></h4>
+			</div>
+			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+				<div class="container-fluid">
+					<div class="row">
+						<h2>Log In</h2>
+					</div>
+					<div class="row">
+						<form [formGroup]="loginForm" class="form-group" >
+							<div class="row">
+								<input type="text" formControlName="uname"class="form__input" placeholder="Username" required>
+							</div>
+							<div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="password" formControlName="password" class="form__input" placeholder="Password" required>
+							</div>
+							<!-- <div class="row">
+								<input type="checkbox" name="remember_me" id="remember_me" class="">
+								<label for="remember_me">Remember Me!</label>
+							</div> -->
+							<div class="row" (click)="onLogin()">
+								<input type="submit" value="Log In" class="btn" >
+							</div>
+						</form>
+					</div>
+					<!-- <div class="row">
+						<p>Don't have an account? <a href="#">Register Here</a></p>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<!-- <div class="container-fluid text-center footer">
+		Coded with &hearts; by <a href="https://bit.ly/yinkaenoch">Yinka.</a></p>
+	</div> -->

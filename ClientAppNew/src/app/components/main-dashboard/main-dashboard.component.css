@@ -1,0 +1,275 @@
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .cell {
+    min-height: 100%;
+    margin: 0.3rem;
+  }
+  .cell__big {
+    height: auto;
+    display: flex;
+    height: calc(100% - 4rem);
+  }
+  .apply-filter {
+    filter: brightness(0) invert(1);
+   
+}
+
+.card__content p {
+    font-size: large !important;
+}
+
+.test-card{
+    background-color: #c9c9c9 !important;
+}
+
+.heading-text {
+    color: #555;
+    font-size: 20px !important;
+}
+
+p{
+    margin: 2px !important;
+}
+
+.bg_false{
+    background-color: #dc3545 !important;
+}
+.bg_true{
+    background-color:#28a745 !important;
+}
+
+
+h1 {
+    color: #333;
+    margin-top: 20px !important;
+    font-size: 50px !important;
+}
+
+.counts {
+    text-align: center;
+    /* font-size: 100px !important; */
+    font-weight: 500 !important;
+    margin-top: 10px !important;
+}
+
+.eodd {
+    white-space: nowrap;
+    font-size: 15px;
+}
+.statusparaTemp{
+    white-space: nowrap;
+    font-size: 16px !important;
+    width: auto !important;
+    right: 0;
+    top: 20%;
+    background-color: rgba(0, 110, 255, 0.816);
+    font-size: small;
+    padding: 0px 10px !important;
+    border-radius: 10px;
+}
+
+.statusparaTemp p{
+    font-weight: 700 !important;
+
+}
+
+ .row .testBenchCard{
+    background-color: #1d3b55;
+    display: flex;
+    cursor: pointer;
+}
+.row .testCard{
+    /* width: 239px; */
+    width: 100%;
+    height: 100%;
+}
+span{
+    font-size: 11px;
+    padding: 8px;
+}
+
+.count {
+    text-align: left;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    margin-top: 0px !important;
+}
+
+.col-2 , .col-md-2, .col-lg-2, .col-xl-2{
+    width: 20% ;
+}
+
+.statuspara {
+    white-space: nowrap;
+    font-size: 12px !important;
+    width: auto !important;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    bottom: -15%;
+    font-size: small;
+    padding: 0px 10px !important;
+    border-radius: 10px;
+}
+
+/* .card__subline{
+    white-space: nowrap;
+} */
+
+
+.greenDot {
+    display: inline-block;
+    /* padding: 10px; */
+    height: 15px !important;
+    width: 15px !important;
+    border-radius: 50%;
+    background-color: green;
+}
+.grayDot {
+    display: inline-block;
+    /* padding: 10px; */
+    height: 15px !important;
+    width: 15px !important;
+    border-radius: 50%;
+    background-color: #888;
+}
+
+.redDot {
+    display: inline-block;
+    /* padding: 10px; */
+    height: 15px !important;
+    width: 15px !important;
+    border-radius: 50%;
+    background-color: #ff6464;
+}
+
+.card__title h1 {
+    font-weight: 500;
+    font-size: 30px !important;
+}
+
+.card__title h3 {
+    font-size: 20px !important;
+}
+
+.card__header {
+    padding-bottom: 0 !important;
+    padding-top: 10px !important;
+}
+
+@media (max-width:1650px) {
+    .eodd {
+        font-size: 13px !important;
+    }
+
+    .card__subline {
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width:800px)
+{
+    .col-2 , .col-md-2, .col-lg-2, .col-xl-2{
+        width: 100% !important ;
+    }
+}
+
+@media (max-width:1450px) {
+    .card__subline {
+        font-weight: 700 !important;
+        font-size: 10px !important;
+    }
+
+    
+
+    .dashHeader{
+        font-size: 15px !important;
+    }
+
+    .card__title div {
+        font-size: 12px !important
+    };
+
+    
+    .card__content h5{
+        font-size: 12px;
+    }
+
+    .updatedAt{
+        text-align: center !important;
+    }
+
+    .card__title h3{
+        font-size: 12px  !important;
+    }
+
+    .card__title h1 {
+        font-weight: 600;
+        font-size: 20px !important;
+    }
+
+    .heading-text {
+        color: #555;
+        font-size: 12px !important;
+    }
+
+    .card__title{
+        font-size: 13px !important;
+    }
+
+    h5{
+        font-size: 18px !important;
+    }
+    .statuspara {
+        font-size: 10px !important;
+    }
+
+    .statusparaTemp{
+        white-space: nowrap;
+        font-size: 10px !important;
+        width: auto !important;
+        right: 0;
+        top: 25%;
+        background-color: #888;
+        font-size: small;
+        padding: 0px 10px !important;
+        border-radius: 10px;
+    }
+
+}
+
+
+
+
+.test-bench-card{
+    cursor: pointer;
+}
+
+.greenDot {
+    display: inline-block;
+    /* padding: 10px; */
+    height: 15px !important;
+    width: 15px !important;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.uxt.uxt-defaults .card .card__footer {
+    margin-top: auto;
+    padding: 0 !important;
+}
+
+/* .bg-success{
+    padding: 5px !important;
+} */
+.bg-danger{
+    padding: 5px !important;
+}

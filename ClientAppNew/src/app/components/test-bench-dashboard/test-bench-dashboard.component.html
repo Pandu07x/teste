@@ -1,0 +1,420 @@
+<div class="dashboard row p-3" *ngIf="showDash">
+    
+    <div class="col-12">
+
+        <div class="card ps-1 ">
+            <div class="  row  text-center">
+                <div class="col-12 order-2 order-sm-1 order-md-1 order-lg-1 order-xl-1 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <p class="text-sm-center m-0 text-center text-md-start text-lg-start text-xl-start"></p>
+                </div>
+                <div class="col-12 order-1 order-sm-1 order-md-2 order-lg-2 order-xl-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                    <h4 class="dashHeader">NPD-IOT Lab Dashboard</h4>
+                </div>
+                <div class="col-12 order-3 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    
+                </div>
+            </div>
+        </div>
+    
+        <div class="row mt-3  ">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+                <div class=" h-100">
+                    <div class="card__header p-2">
+                        <div class="card__title">
+                            Project Details (Last Project Time : {{dashData.lastUpdated | date:'dd/MM/yyyy hh:mm'}})
+                        </div>
+                    </div>
+                    <div class=" pb-0 row">
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-md-4     mb-3    ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title"><span><img src="../../../assets/images/pen.png" height="20px"
+                                            width="20px" alt=""></span>
+                                    Project Name</h6>
+                                <div class="mt-2">
+                                    <h5>{{dashData?.ProjectName }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-md-4    mb-3  ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title"><span><img src="../../../assets/images/list.png" height="20px"
+                                            width="20px" alt=""></span>
+                                    Project Number</h6>
+                                <div class="mt-2">
+                                    <h5>{{dashData?.ProjectNumber}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 col-md-4    mb-3 ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title"><span><img src="../../../assets/images/location.png" height="20px"
+                                            width="20px" alt=""></span> Project Type</h6>
+                                <div class="mt-2">
+                                    <h5>{{dashData?.projectTypeString}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4  mb-3  ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title"><span><img src="../../../assets/images/user.png" height="20px"
+                                            width="20px" alt=""></span>
+                                    Project Operator</h6>
+                                <div class="mt-2">
+                                    <h5>{{dashData?.ProjectOwner}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4  mb-3  ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title"><span><img src="../../../assets/images/user.png" height="20px"
+                                            width="20px" alt=""></span>
+                                    Project System ID</h6>
+                                <div class="mt-2">
+                                    <h5>{{dashData?.ProjectId}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4  mb-3  ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title"><span><img src="../../../assets/images/test.png" height="20px"
+                                            width="20px" alt=""></span>
+                                    Test Bench Number</h6>
+                                <div class="mt-2">
+                                    <h5> {{dashData?.TestBenchNo}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- {{dashData | json}}  -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class=" p-1">
+                    <div class="card__header p-2">
+                        <div class="card__title">
+                            Test Run Status :
+                        </div>
+                    </div>
+                    <div class="mt-0 pb-0  row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3    ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title">
+                                    Test Start Time</h6>
+                                <div class="mt-2">
+                                    <h5 *ngIf="dashData.startTime != 'NA'">{{dashData.startTime | date:'dd/MM/yyyy hh:mm:ss'}}</h5>
+                                    <h5 *ngIf="dashData.startTime == 'NA'">Not Running</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6     mb-3  ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title">
+                                    Test Run Time</h6>
+                                <div class="mt-2">
+                                    <h5 *ngIf="dashData.startTime">{{dashData.totalRunningHours}}</h5>
+                                    <h5 *ngIf="!dashData.startTime">NA</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6   mb-3 ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title">Total Project Run Time</h6>
+                                <div class="mt-2">
+                                    <h5>{{dashData.totalProjectRunTime}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6     mb-3  ">
+                            <div class="card bg-light p-2">
+                                <h6 class="card__title">
+                                    Test Serial Number</h6>
+                                <div class="mt-2">
+                                    <h5>{{dashData.TestRunCount}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="mt-3  row ">
+            <div class="col-12 mb-3 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card overflow-hidden border-6 h-100 border-bottom border-success">
+                    <div class="card__header pb-0">
+    
+                        <h3 class="card__title">
+                            <div class="d-flex align-items-end justify-content-between">
+                                <div>
+                                    Test Bench Status
+                                </div>
+                                <div>
+                                   
+                                </div>
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="card__content h-100 text-center p-1">
+                        <h1
+                           
+                            class="d-flex align-items-center gap-3 h-100  justify-content-center">
+                            <div  [ngClass]="{
+                                'text-success':dashData?.testingStateString === 'Running',
+                                'text-warning':dashData?.testingStateString === 'Idle',
+                                'text-danger':dashData?.testingStateString === 'Stop',
+                                'text-starting':dashData?.testingStateString === 'Starting',
+                                'text-hold':dashData?.testingStateString === 'Hold'
+                            }"
+                            >
+                                {{dashData?.testingStateString}}
+                            </div>
+                            <div>
+                                <span style="color: #777;">|</span>
+                            </div>
+                            <div>
+                                <span style="color: #777; font-size: medium;">{{dashData.testBenchRunning}}</span>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="card__footer p-2"  [ngClass]="{
+                        'bg-success':dashData?.testingStateString === 'Running',
+                        'bg-warning':dashData?.testingStateString === 'Idle',
+                        'bg-danger':dashData?.testingStateString === 'Stop',
+                        'bg-starting':dashData?.testingStateString === 'Starting',
+                        'bg-hold':dashData?.testingStateString === 'Hold'
+                    }">
+    
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-3  col-sm-12 col-md-9 col-lg-9 col-xl-9">
+                <div class="card overflow-hidden h-100">
+                    <div class="row align-items-end pt-0" *ngIf="dashData.projectTypeString != 'EODD'">
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2  ">
+                            <div class="position-relative" *ngIf="dataSource">
+                                <fusioncharts [width]="width" [height]="height" [type]="'angulargauge'"
+                                    [dataFormat]="dataFormat" [dataSource]="dataSource">
+                                </fusioncharts>
+                              
+                                <div class="text-center">
+                                    <p style="font-weight: 600;">
+                                        .
+                                    </p>
+                                    <p>
+                                        Pump RPM
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2  ">
+                            <div class="position-relative" *ngIf="dataSourcepRESSURE">
+                                <fusioncharts [width]="width" [height]="height" [type]="'angulargauge'"
+                                    [dataFormat]="dataFormat" [dataSource]="dataSourcepRESSURE">
+                                </fusioncharts>
+                                <div class="text-center">
+                                    <p style="font-weight: 600;">
+                                        BAR
+                                    </p>
+                                    <p>
+                                        Discharge Pressure
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                            <div class="position-relative" *ngIf="dataDischargeFlow">
+                                <fusioncharts [width]="width" [height]="height" [type]="'angulargauge'"
+                                    [dataFormat]="dataFormat" [dataSource]="dataDischargeFlow">
+                                </fusioncharts>
+                                <div class="text-center">
+                                    <p style="font-weight: 600;">
+                                        LPM
+                                    </p>
+                                    <p>
+                                        Discharge Flow
+                                    </p>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2" >
+                            <div class=" h-100">
+                                <div class="position-relative text-center">
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString == 'Running'">{{dashData?.MotorAMP | number:'1.2-2'}}</h4>
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString != 'Running'">0.00</h4>
+                                    <div class="text-center">
+                                        <p style="font-weight: 600;">
+                                            Amp
+                                        </p>
+                                        <p>
+                                            Motor Current
+                                        </p>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2" >
+                            <div class=" h-100">
+                                <div class="position-relative text-center">
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString == 'Running'" >{{dashData?.MotorKWH  | number:'1.2-2'}}</h4>
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString != 'Running'" >0.00</h4>
+                                    <div class="text-center">
+                                        <p style="font-weight: 600;">
+                                            kwh
+                                        </p>
+                                        <p>
+                                            Energy
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                            <div class=" h-100">
+                                <div class="position-relative text-center">
+                                    <h4 style="font-weight: 700;">{{dashData?.StrokeCountRate | number:'1.0'}} / Min</h4>
+                                    <div class="text-center">
+                                        <p style="font-weight: 600;" *ngIf="dashData?.testingStateString == 'Running'" >
+                                            {{dashData?.StrokeCount | number:'1.0'}} Strokes
+                                        </p>
+                                        <p style="font-weight: 600;" *ngIf="dashData?.testingStateString != 'Running'" >
+                                            {{dashData?.StrokeCount | number:'1.0'}} Strokes
+                                        </p>
+                                        <p>
+                                            Stroke Count
+                                        </p>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row eoddList align-items-end  pt-0" *ngIf="dashData.projectTypeString == 'EODD'">
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 " >
+                            <div class="position-relative" *ngIf="dataSource">
+                                <fusioncharts [width]="width" [height]="height" [type]="'angulargauge'"
+                                    [dataFormat]="dataFormat" [dataSource]="dataSource">
+                                </fusioncharts>
+                               
+                                <div class="text-center">
+                                    <p style="font-weight: 600;">
+                                        .
+                                    </p>
+                                    <p>
+                                        Pump RPM
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 " >
+                            <div class="position-relative" *ngIf="dataSourcepRESSURE">
+                                <fusioncharts [width]="width" [height]="height" [type]="'angulargauge'"
+                                    [dataFormat]="dataFormat" [dataSource]="dataSourcepRESSURE">
+                                </fusioncharts>
+                                <div class="text-center">
+                                    <p style="font-weight: 600;">
+                                        BAR
+                                    </p>
+                                    <p>
+                                        Discharge Pressure
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 " >
+                            <div class="position-relative" *ngIf="dataDischargeFlow">
+                                <fusioncharts [width]="width" [height]="height" [type]="'angulargauge'"
+                                    [dataFormat]="dataFormat" [dataSource]="dataDischargeFlow">
+                                </fusioncharts>
+                                <div class="text-center">
+                                    <p style="font-weight: 600;">
+                                        LPM
+                                    </p>
+                                    <p>
+                                        Discharge Flow
+                                    </p>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2" >
+                            <div class=" h-100">
+                                <div class="position-relative text-center">
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString == 'Running'">{{dashData?.MotorAMP | number:'1.2-2'}}</h4>
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString != 'Running'">0.00</h4>
+                                    <div class="text-center">
+                                        <p style="font-weight: 600;">
+                                            Amp
+                                        </p>
+                                        <p>
+                                            Motor Current
+                                        </p>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3 col-sm-2 col-md-2 col-lg-2 col-xl-2" >
+                            <div class=" h-100">
+                                <div class="position-relative text-center">
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString == 'Running'" >{{dashData?.MotorKWH  | number:'1.2-2'}}</h4>
+                                    <h4 style="font-weight: 700;"  *ngIf="dashData?.testingStateString != 'Running'" >0.00</h4>
+                                    <div class="text-center">
+                                        <p style="font-weight: 600;">
+                                            kwh
+                                        </p>
+                                        <p>
+                                            Energy
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="mt-3 row ">
+            <div class="col-12 ">
+                <div class="card overflow-hidden ps-2 pe-2 pt-2">
+                    <div class="row">
+                        <div class="col-12 mb-2 col-sm-6 col-md-3 col-xl-3 col-lg-3">
+                            <div class="d-flex gap-2 align-items-center">
+                                <label style="display: inline;" class="">Chart Type: </label>
+                                <select (change)="onChartTypeChange()" [(ngModel)]="type" style="display: inline-block;"
+                                    name="" id="" class="form-select ">
+                                    <option value="msline">Line</option>
+                                    <option value="msarea">Area</option>
+                                    <option value="mscolumn2d">Bar</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="col-12 mb-2 col-sm-6 col-md-3 col-xl-3 col-lg-3">
+                            <div class="d-flex gap-2 align-items-center">
+                                <label style="display: inline;" class="">Aggregation:</label>
+                                <select (change)="onAggChange()" [(ngModel)]="selectedAgg" style="display: inline-block;"
+                                    name="" id="" class="form-select ">
+                                    <option value="Yearly">This Year</option>
+                                    <option value="Monthly">This Month</option>
+                                    <option value="Weekly">This Week</option>
+                                    <option value="Today">Today</option>
+                                </select>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="mt-2 row">
+                            <div class="col-12">
+                            <fusioncharts [width]="width" [height]="'250'" [type]="type" [dataFormat]="dataFormat"
+                                [dataSource]="dataSource2">
+                            </fusioncharts>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

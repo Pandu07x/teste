@@ -1,0 +1,30 @@
+<div class="d-flex align-items-center ">
+    <div class="card p-5">
+        <h4 *ngIf="!isEditMode"> <i><img src="../../../../assets/images/add-user.png"  width="30px" alt=""></i> Create Role</h4>
+        <h4 *ngIf="isEditMode"> <i><img src="../../../../assets/images/user-avatar.png"  width="30px" alt=""></i> Edit Role</h4>
+        <form *ngIf="formData" [formGroup]="formData" >
+            <div class="form-group mb-3">
+                <label for="">Role Name</label>
+                <input formControlName="roleName" type="text" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <label for="">Description</label>
+                <input formControlName="description" type="text" class="form-control">
+            </div>
+            <div class="col-12 mb-3">
+                <h4>Select Permissions:</h4>
+                <div *ngFor="let item of checkboxes" class="form-check">
+                    <input [ngModelOptions]="{standalone: true}" [(ngModel)]="item.selected" class="form-check-input"
+                        type="checkbox" value="" >
+                    <label class="form-check-label" for="flexCheckDefault">
+                        {{item.displayName}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="createUser()">Save</button>
+                <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

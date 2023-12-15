@@ -1,0 +1,59 @@
+<form *ngIf="formData" [formGroup]="formData" >
+    <div class="card p-5">
+        <h4 *ngIf="!isEditMode"> <i><img src="../../../../assets/images/add-user.png"  width="30px" alt=""></i> Create User</h4>
+        <h4 *ngIf="isEditMode"> <i><img src="../../../../assets/images/user-avatar.png"  width="30px" alt=""></i> Edit User</h4>
+        <div class="row mt-4 w-100">
+            <div class="col-3 mb-3">
+                <label>UserName</label>
+                <input formControlName="userName" type="text" placeholder="Add User Name" class="form-control">
+                <span class="text-danger mt-1" *ngIf="formData.get('userName').hasError('pattern') &&  formData.get('userName').touched">
+                    Username is invalid (it should be like: example@test)
+                </span>
+            </div>
+            <div class="col-3 mb-3">
+                <label>Password</label>
+                <input formControlName="password" type="password" class="form-control" placeholder="Add Password">
+                <div *ngIf="passwordControl.hasError('passwordComplexity') && passwordControl.touched" class="text-danger">
+                    <p>**Password must contain**</p>
+                    <p>at least one uppercase letter,  one number, one special character, one lowercase letter</p>
+                 </div>
+            </div>
+            <div class="col-3 mb-3">
+                <label>First Name</label>
+                <input formControlName="firstName" type="text" placeholder="Add First Name" class="form-control">
+            </div>
+            <div class="col-3 mb-3">
+                <label>Last Name</label>
+                <input formControlName="lastName" type="text" placeholder="Add last Name" class="form-control">
+            </div>
+            <div class="col-12 mb-3">
+                <h4>Select Role:</h4>
+                <div *ngFor="let item of rolesList">
+                    <div class="form-check">
+                        <input [disabled]="item.role == 'Administrator'" (change)="onRoleSelect(item)"
+                            [(ngModel)]="item.selected"  [ngModelOptions]="{standalone: true}" class="form-check-input" type="checkbox" value=""
+                            >
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{item.role}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <h4>Select Permissions:</h4>
+                <div *ngFor="let item of checkboxes" class="form-check">
+                    <input  [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}" class="form-check-input"
+                        type="checkbox" value="" >
+                    <label class="form-check-label" for="flexCheckDefault">
+                        {{item.displayName}}
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" (click)="createUser()">Save</button>
+                <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+  
+</form>

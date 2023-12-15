@@ -1,0 +1,169 @@
+<script src="../../../assets/js/msdpJS.js"></script>
+<div id="_mdspcontent" class="uxt uxt-defaults forceDefaultElements">
+  <div class="appWrapper has-appBarAdvanced" [ngClass]="{'has-appBarAdvanced-collapsed':isCollapses}">
+
+    <div [ngClass]="{'contextRegion-is-expanded': false}"
+      [ngClass]="{'leadingRegion-is-expanded':false}"
+      class="appWrapper__regions has-appHeader has-contextRegion has-leadingRegion  leadingRegion-is-expanded appWrapper__regions--pushLayout">
+
+      <section class="appHeader">
+        <div class="appHeader__breadcrumb">
+        </div>
+        <div class="appHeader__content">
+          <div  routerLink='/home' style="cursor: pointer;" class=" d-flex w-100 justify-content-between">
+            <div>
+              <img src="../../../assets/images/IEX.png" height="20px"  alt="">
+            </div>
+            <div>
+            
+            </div>
+
+          </div>
+        </div>
+        <div class="appHeader__viewToggler me-3">
+          Updated At : {{timeStamp | date:'dd/MM/yyyy hh:mm'}} |  Siddharth Parmar
+          <button mat-icon-button  [matMenuTriggerFor]="menu"  aria-label="Example icon-button with a menu">
+            <span aria-hidden='true' class='iconUxt person filled'></span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button   routerLink="/usermanager" mat-menu-item>
+              <mat-icon>supervised_user_circle</mat-icon>
+              <span>Manage Users</span>
+            </button>
+            <button mat-menu-item (click)="logOut()">
+              <mat-icon>logout</mat-icon>
+              <span>LogOut</span>
+            </button>
+          </mat-menu>
+       
+        </div>
+      </section>
+
+   
+      <section class="mainRegion">
+        <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+        <router-outlet></router-outlet>
+      </section>
+
+      <section class="contextRegion p-0">
+        <div class=" d-flex flex-column h-100 justify-content-between">
+          <div>
+            <div class="alarm-header   w-100">
+              <h5>Critical Alarm</h5>
+            </div>
+            <div class="p-1 mt-2">
+              <div class="alert alert-danger" role="alert">
+                This is a danger alert—check it out!
+              </div>
+              <div class="alert alert-warning" role="alert">
+                This is a warning alert—check it out!
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="alarm-header w-100">
+              <h5>Warning</h5>
+            </div>
+            <div class="p-1 mt-2">
+              <div class="alert alert-danger" role="alert">
+                This is a danger alert—check it out!
+              </div>
+              <div class="alert alert-warning" role="alert">
+                This is a warning alert—check it out!
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="alarm-header w-100">
+              <h5>Notifications</h5>
+            </div>
+            <div class="p-1 mt-2">
+              <div class="alert alert-danger" role="alert">
+                This is a danger alert—check it out!
+              </div>
+              <div class="alert alert-warning" role="alert">
+                This is a warning alert—check it out!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <nav class="appBarAdvanced">
+      <div class="appBarAdvanced__inner ">
+        <div class="appBarAdvanced__header">
+          <!-- optional header -->
+        </div>
+        <ul class="appBarAdvanced__content mb-0">
+          <li  class="level1 is-home">
+            <a class="item__link" routerLink='/home'>
+              <div class="item__icon">
+                <i aria-hidden="true" class="iconUxt home"></i>
+              </div>
+              <span class="item__title">Home</span>
+            </a>
+          </li>
+          <li   class="level1 is-home" (click)="toggelLeadingRegion(1)">
+            <a class="item__link " routerLink='/home'>
+              <div class="item__icon" id="toggleLeadingRegionDemo">
+                <i aria-hidden="true" class="iconUxt chartPie"></i>
+              </div>
+              <span class="item__title">Dashboard</span>
+            </a>
+          </li>
+          <!-- <li   class="level1 is-home" (click)="toggelLeadingRegion(2)">
+            <a class="item__link" routerLink='/home/testbench'>
+              <div class="item__icon" id="toggleLeadingRegionDemo">
+                <span aria-hidden='true' class='iconUxt analysis'></span>
+              </div>
+              <span class="item__title">Test Bench</span>
+            </a>
+          </li> -->
+          <li class="level1 is-home" (click)="toggelLeadingRegion(3)">
+            <a class="item__link" routerLink='/home/historicalreport'>
+              <div class="item__icon" id="toggleLeadingRegionDemo">
+                <span aria-hidden='true' class='iconUxt filetypeTable'></span>
+              </div>
+              <span class="item__title">Historic Reports</span>
+            </a>
+          </li>
+          <li   class="level1 is-home" (click)="toggelLeadingRegion(3)">
+            <a class="item__link" routerLink='/home/report2'>
+              <div class="item__icon" id="toggleLeadingRegionDemo">
+                <span aria-hidden='true' class='iconUxt filetypeTable'></span>
+              </div>
+              <span class="item__title">Reports</span>
+            </a>
+          </li>
+
+
+          <!-- <button class="button button--ghost has-icon-only button--leading" id="toggleLeadingRegionDemo">
+                      <span aria-hidden="true" class="iconUxt"></span>
+                  </button> -->
+
+        </ul>
+        <div (click)="isCollapses = !isCollapses" class="appBarAdvanced__footer position-relative cursor-pointer" style="cursor: pointer;">
+          <a id="appBar--expander">
+            <!-- optional expand / collapse label -->
+            <span class="item__title">Collapse</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+
+  </div>
+
+
+  <script type="text/javascript" src="https://static.eu1.mindsphere.io/osbar/v4/js/main.min.js"></script>
+  <script>
+    _msb.init({
+      title: "App Layout",
+      showLegal: true,
+      polyfills: {
+        promise: true
+      }
+    });
+
+  </script>
+</div>

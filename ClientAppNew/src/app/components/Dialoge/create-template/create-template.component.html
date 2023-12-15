@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Create Template</h1>
+<mat-dialog-content>
+    <form [formGroup]="formData">
+        <div class="row">
+            <div class="col-4 mb-3">
+                <mat-form-field class="example-form-field me-2">
+                    <mat-label>Template Name</mat-label>
+                    <input formControlName="name" matInput type="text">
+                  </mat-form-field>
+            </div>
+            <div class="col-4 mb-3">
+                <mat-form-field>
+                    <mat-label>Project Type</mat-label>
+                    <mat-select formControlName="category">
+                      <mat-option [value]="'EODD'">EODD</mat-option>
+                      <mat-option [value]="'AODD'">AODD</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="col-4 mb-3">
+                <mat-form-field>
+                    <mat-label>Column Names</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                      <mat-select-trigger>
+                        {{toppings.value?.[0] || ''}}
+                        <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+                          (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let topping of listOfCols" [value]="topping.id">{{topping.columnName}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+           
+            <div class="col-12">
+                <button class="btn ms-3 btn-primary" (click)="save()">Save</button>
+            </div>
+        </div>
+       
+    </form>
+</mat-dialog-content>

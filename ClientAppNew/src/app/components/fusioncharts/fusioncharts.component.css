@@ -1,0 +1,18 @@
+.dialog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.dialog-actions {
+    margin-top: auto; 
+    align-self: flex-end; 
+}
+.example-spacer {
+    flex: 1 1 auto;
+    cursor: pointer;
+  } 
+mat-toolbar{
+    background-color: #1d3b55;
+    color: white;
+}

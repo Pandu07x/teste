@@ -1,0 +1,134 @@
+<div class="dashboard p-3">
+    <div class="row ">
+      <div class="col-6 col-lg-3 col-xl-3 col-md-3 col-sm-6 mb-3">
+        <label for="">From</label>
+        <input [(ngModel)]="fromRaw" type="datetime-local" class="form-control">
+      </div>
+      <div class="col-6 col-lg-3 col-xl-3 col-md-3 col-sm-6 mb-3">
+        <label for="">to</label>
+        <input [max]="maxDate" [(ngModel)]="toRow" type="datetime-local" class="form-control">
+      </div>
+      <div class="col-6 col-lg-3 col-xl-3 col-md-3 col-sm-6 mb-3">
+        <label for="">Type</label>
+        <select [(ngModel)]="type2"  class="form-select">
+          <option value="EODD">EODD</option>
+          <option value="AODD">AODD</option>
+        </select>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+        <mat-form-field class="w-100">
+          <mat-label>Column Names</mat-label>
+          <mat-select [formControl]="toppings" multiple>
+            <mat-select-trigger>
+              {{toppings.value?.[0] || ''}}
+              <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+                (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of listOfCols" [value]="topping.columnName">{{topping.columnName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-2 mb-3">
+        <button class="btn btn-primary" (click)="apply()">Apply</button>
+      </div>
+    </div>
+    <div class="text-end">
+    </div>
+    <button class="btn text-end btn-secondary" (click)="exporter.exportTable('csv')">Export</button>
+    <div class="example-container mb-5 overflow-auto">
+     
+      <mat-table matTableExporter   #exporter="matTableExporter" [dataSource]="dataSource123" class="mat-elevation-z8">
+        
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="Project Id">
+          <mat-header-cell *matHeaderCellDef> Project Id </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.projectId}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="Project Number">
+          <mat-header-cell *matHeaderCellDef> Project Number </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.projectNumber}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="Project Name">
+          <mat-header-cell *matHeaderCellDef> Project Name </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.projectName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Owner Name">
+          <mat-header-cell *matHeaderCellDef> Project Owner </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.projectOwnwer}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Test Bench">
+          <mat-header-cell *matHeaderCellDef> Test Bench </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.projectTestNo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Configuration">
+          <mat-header-cell *matHeaderCellDef> Configuration </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{ projConfig(element.projectConfig)}} </mat-cell>
+        </ng-container>
+   
+        <ng-container matColumnDef="Start Time">
+          <mat-header-cell *matHeaderCellDef> Start Time </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.startTime | date:'dd/MM/yyyy hh:mm:ss'}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="End time">
+          <mat-header-cell *matHeaderCellDef> End Time </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.endTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.projectEndTime | date:'dd/MM/yyyy hh:mm:ss'}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="Group Name">
+          <mat-header-cell *matHeaderCellDef> Group </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.endTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.group }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Test Serial Number">
+          <mat-header-cell *matHeaderCellDef> Test Serial Number </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="assignProjectId(element.projectId, element.startTime, element.projectEndTime,element.group)" [ngClass]="{'isActive': element.projectId == projectId}"> {{element.testRunCount }} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky:true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="12" >No data </td>
+        </tr>
+      </mat-table>
+      
+    </div>
+    
+    <hr />
+    
+    <div>
+      <div class="mt-5 row">
+          <div class="col-12">
+            <button class="btn w-auto btn-secondary" (click)="exporter2.exportTable('csv')">Export</button>
+            <div class="overflow-auto">
+                <mat-table matTableExporter #exporter2="matTableExporter" [dataSource]="dataSource" class="mat-elevation-z8">
+                  <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+                
+                  <!-- Position Column -->
+                  <ng-container *ngFor="let item of displayedCols" matColumnDef={{item}}>
+                    <mat-header-cell *matHeaderCellDef>{{item}} </mat-header-cell>
+                    <mat-cell *matCellDef="let element" >{{element[item]}}</mat-cell>
+                  </ng-container>
+                
+                  <mat-header-row *matHeaderRowDef="displayedCols; sticky:true"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedCols;"></mat-row>
+                </mat-table>
+                
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+              </div>
+    </div>
+    </div>
+  </div>
+  
+  

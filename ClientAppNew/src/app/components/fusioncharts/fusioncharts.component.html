@@ -1,0 +1,35 @@
+<!-- Air Quality Dialog -->
+<div class="dialog-container" *ngIf="dataSourceAir">
+        <mat-toolbar>
+            <span>Air Quality Details Chart</span>
+            <span class="example-spacer"></span>
+            <mat-icon (click)="onClose()">close</mat-icon>
+        </mat-toolbar>
+    <div mat-dialog-content >
+        <fusioncharts   [width]="'100%'" [height]="'135'" type="msline" [dataSource]="dataSourceAir"></fusioncharts>   
+    </div>
+</div>
+
+<!-- Temperature Dialog -->
+<div  class="dialog-container" *ngIf="dataSourceTemperature">
+    <mat-toolbar>
+        <span>Temprature Details Chart</span>
+        <span class="example-spacer"></span>
+        <mat-icon (click)="onClose()">close</mat-icon>
+    </mat-toolbar>
+    <div mat-dialog-content>
+        <fusioncharts  [width]="'100%'" [height]="'140'" type="splinearea" [dataSource]="dataSourceTemperature"></fusioncharts>
+    </div>
+</div>
+
+<!-- Humidity Dialog -->
+<div  class="dialog-container" *ngIf="dataSourceHumidity">
+    <mat-toolbar>
+        <span>Humidity Details Chart</span>
+        <span class="example-spacer"></span>
+        <mat-icon (click)="onClose()">close</mat-icon>
+    </mat-toolbar>
+    <div mat-dialog-content>
+        <fusioncharts  width="100%" [height]="'140'" type="splinearea" [dataSource]="dataSourceHumidity"></fusioncharts>
+    </div>
+</div>

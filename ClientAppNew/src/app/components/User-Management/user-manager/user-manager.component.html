@@ -1,0 +1,97 @@
+<div class="d-flex mt-4 h-100 align-items-center">
+    <div class="container p-5 bg-light">
+        <h3> <span aria-hidden='true' class='iconUxt person filled'></span> User & Role Manager</h3>
+        <hr  />
+        <ng-container *ngIf="!isCreateUser && !isCreateRole && !isEditUser && !isEditRole">
+            <div class="form-group text-end">
+                <button *ngIf="checkPermission('users.manage')" (click)="isCreateUser = true" class="btn btn-primary">Add
+                    User</button>
+            </div>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="UserName">
+                    <th mat-header-cell *matHeaderCellDef> UserName </th>
+                    <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Updated Date">
+                    <th mat-header-cell *matHeaderCellDef> Updated Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.updatedDate | date:'dd/MM/yyyy HH:ss'}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="Full Name">
+                    <th mat-header-cell *matHeaderCellDef> Full Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Role">
+                    <th mat-header-cell *matHeaderCellDef> Roles </th>
+                    <td mat-cell *matCellDef="let element">
+                        <ng-container *ngFor="let item of element.roles">
+                            {{item.name}}
+                        </ng-container>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef>  </th>
+                    <td mat-cell *matCellDef="let element;let i = index">
+                      <button class="btn btn-primary" (click)="editUserWindow(element.id)">Edit</button>
+                      <button class="btn btn-danger" (click)="deleteUser(element)">Delete</button>
+
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <div class="form-group text-end">
+                <button *ngIf="checkPermission('roles.manage')" (click)="isCreateRole = true"
+                    class="btn btn-primary">Add Role</button>
+            </div>
+            <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="Role">
+                    <th mat-header-cell *matHeaderCellDef> Role </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Description">
+                    <th mat-header-cell *matHeaderCellDef> Description </th>
+                    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Updated Date">
+                    <th mat-header-cell *matHeaderCellDef> Updated Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.updatedDate | date:'dd/MM/yyyy HH:ss'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef>  </th>
+                    <td mat-cell *matCellDef="let element;let i = index">
+                      <button class="btn btn-primary" (click)="editRoleWindow(element.id)">Edit</button>
+                      <button class="btn btn-danger" (click)="deleteRole(element.name)">Delete</button>
+                    </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+            </table>
+        </ng-container>
+        <ng-container>
+            <app-create-user *ngIf="isCreateUser" (onCancel)="canceled($event)"></app-create-user>
+            <app-create-user *ngIf="isEditUser " [id]="selectedUserId" (onCancel)="canceled($event)"></app-create-user>
+        </ng-container>
+        <ng-container>
+            <app-create-role *ngIf="isCreateRole" (onCancel)="canceledRole($event)"></app-create-role>
+            <app-create-role *ngIf="isEditRole" [id]="selectedRoleId" (onCancel)="canceledRole($event)"></app-create-role>
+        </ng-container>
+
+    </div>
+</div>
