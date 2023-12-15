@@ -1,7 +1,7 @@
 import { Component ,Inject,OnDestroy, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { FusionChartsComponent } from 'angular-fusioncharts';
-import { FusionCharts } from 'dist/assets/js/fusioncharts/js/fusioncharts';
+// import { FusionChartsComponent } from 'angular-fusioncharts';
+// import { FusionCharts } from 'dist/assets/js/fusioncharts/js/fusioncharts';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BulkData, Variable } from 'src/app/_model/Variables.Model';
 import { VariableDashboard, VariableValue } from 'src/app/_model/variableValue.model';
