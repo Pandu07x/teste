@@ -1,0 +1,575 @@
+[
+  {
+    "variableId": "f3a7aa2b85e5461b8a0f10a91040195b",
+    "variableName": "ProjectType",
+    "dataType": "Int32",
+    "assetId": "0",
+    "aspectId": "347e1f20cc6a4a3c877544348cd9a560",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProjectData"
+},
+  {
+    "variableId": "3cbc44209fe5425b97515792af83ac77",
+    "variableName": "DischargePressureBar",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": ""
+  },
+
+  {
+    "variableId": "051467643c2643c3b39e8f76688cf7b1",
+    "variableName": "OilTank4Level",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "MasterPanelData"
+  },
+  {
+    "variableId": "065f5ad67e884fa2bead5f590e1b5c77",
+    "variableName": "DischargePressurePV",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "1621dccd862b421fa61c52a5419df628",
+    "variableName": "WaterTankTemp",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "25e703f0c1774f9aa466fe7689fc0989",
+    "variableName": "PumpRPM",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "ProcessData"
+  },
+  {
+    "variableId": "263acc8850fd411cb0d3371ddec0dbea",
+    "variableName": "FcvPos",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "75df75a2f5864eae82621aeb9b535394",
+    "variableName": "ProjectName",
+    "dataType": "String",
+    "assetId": "0",
+    "aspectId": "347e1f20cc6a4a3c877544348cd9a560",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProjectData"
+  },
+
+  {
+    "variableId": "3bf1a19c3a9b487facdffc3f1700009f",
+    "variableName": "ProjectNumber",
+    "dataType": "UInt32",
+    "assetId": "0",
+    "aspectId": "347e1f20cc6a4a3c877544348cd9a560",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProjectData"
+  },
+
+  {
+    "variableId": "341f9c290f6f49de8d1b58f3fd7c38ae",
+    "variableName": "TestRun_ProjectId",
+    "dataType": "UInt32",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "81d6a1af160e4a0f9209face029a04bb",
+    "variableName": "MotorAMP",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "06d5b3637aea4a569f96244db7d1f9b6",
+    "variableName": "MotorKWH",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "9cabc43e56264cb5b0354bf765bf72ae",
+    "variableName": "ProjectConfig",
+    "dataType": "Int32",
+    "assetId": "0",
+    "aspectId": "347e1f20cc6a4a3c877544348cd9a560",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProjectData"
+  },
+
+  {
+    "variableId": "532d667c37ec4c97af8de63272cc5bf8",
+    "variableName": "TestBenchNo",
+    "dataType": "Int64",
+    "assetId": "0",
+    "aspectId": "347e1f20cc6a4a3c877544348cd9a560",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProjectData"
+  },
+
+  {
+    "variableId": "373f19a536e24f3ba27095bed5a85d97",
+    "variableName": "InAirPressSP",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "3c5d8e0c052d4998bae05f5c5075ef8f",
+    "variableName": "StrokeCount",
+    "dataType": "UInt32",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "3e79300a541147b8a15b3ea31ef120ad",
+    "variableName": "LabHumidity",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "48ee04f1f3b9427b89139a97798315c8",
+    "variableName": "OilTank3Temp",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "406ee7941d424f00afe31078a6150bb0",
+    "variableName": "ProjectOwner",
+    "dataType": "String",
+    "assetId": "0",
+    "aspectId": "347e1f20cc6a4a3c877544348cd9a560",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProjectData"
+  },
+
+  {
+    "variableId": "5313b472ce34461b850e1282f58e15c4",
+    "variableName": "ProjectId",
+    "dataType": "UInt32",
+    "assetId": "0",
+    "aspectId": "347e1f20cc6a4a3c877544348cd9a560",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProjectData"
+  },
+
+  {
+    "variableId": "533220a76c0f4b688a3b69ad38f35aa1",
+    "variableName": "AoddInAirSCFMPV",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "5de0c3ac7da2454fbab77d008f01952c",
+    "variableName": "MainTankTempPV",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "62fd06a1363949dab6ca87c1cc94122b",
+    "variableName": "DischargePressureSP",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+  {
+    "variableId": "63dda97aab3c4d2098b6c579c50f7c7b",
+    "variableName": "GravMagSel",
+    "dataType": "Bool",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+  {
+    "variableId": "67636905a124405eafacb0626f3b43d3",
+    "variableName": "WaterTankLevel",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "6fcb95818dbd42a285c48e870b8744a9",
+    "variableName": "OilTank1Temp",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "89352379fd3441f28bc78e4fd38feffa",
+    "variableName": "OilTank2Level",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "95f8ed7f534848b5856c28e017e14eee",
+    "variableName": "FlowGrav",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "9b32aae6e4894d1fae689f2948fe14d4",
+    "variableName": "AoddInAirPressPV",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "a3e32554da534a35aebbd1948c231b3a",
+    "variableName": "OilTank3Level",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+  {
+    "variableId": "a52298626a434a7fba462f716f64c3a2",
+    "variableName": "OilTank4Temp",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "aaa4c6d6aa4249b69fc685bdfc2bbcbb",
+    "variableName": "MainTankLTPV",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+  {
+    "variableId": "accae59079d14bfab2d8d81be09a2724",
+    "variableName": "StrokeCountRate",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+  {
+    "variableId": "ad668a39c5c1441684215eb65689d3d5",
+    "variableName": "SuctionPressurePV",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+  {
+    "variableId": "adb7f93d92d44482baf3af640a2ea3c9",
+    "variableName": "LabTemp",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "b4b2503421c249f890b834a1d384aca5",
+    "variableName": "OilTank1Level",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "c4119e8a615448ac9370470c208da973",
+    "variableName": "MotorRPM",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "c4df231506c0479ea56ca7b18e6ce021",
+    "variableName": "FlowMag",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "c9316b41ec71457d91d32134f6c67489",
+    "variableName": "WeightScaleRead",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+
+  {
+    "variableId": "758d17476a2a43f9aa42bbbc021e9db0",
+    "variableName": "LabAirQualityVOC",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "MasterPanelData"
+  },
+  {
+    "variableId": "db218d73dc8046ab9fce58f21e35b4b2",
+    "variableName": "LabAirQualitySPM",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "db218d73dc8046ab9fce58f21e35b4b2",
+    "variableName": "LabAirQuality",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  },
+
+  {
+    "variableId": "eede0f5d651b45e0b77c28d5a4e96f4f",
+    "variableName": "FcvSP",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+  {
+    "variableId": "f09f2ecc07dd4dcfa7fb30d7a359c6cf",
+    "variableName": "MotorKW",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "4ca2e2c25e554008a63a8e45e3844830",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": true,
+    "aspectName": "ProcessData"
+  },
+   
+  {
+    "variableId": "ffd3376f3e6e43d99d550feafd9abd82",
+    "variableName": "OilTank2Temp",
+    "dataType": "Float",
+    "assetId": "0",
+    "aspectId": "be2d4d29b1594c18af1b17f80b856111",
+    "unit": "",
+    "adapterId": null,
+    "topic": "",
+    "store": false,
+    "aspectName": "MasterPanelData"
+  }
+]
