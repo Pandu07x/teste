@@ -10,7 +10,7 @@ export class AuthService {
   user:User;
   accessToken;
   // private apiUrl = 'http://localhost:3000/api';
-  private apiUrl = 'http://ec2-44-195-141-134.compute-1.amazonaws.com/api';
+  private apiUrl = 'http://ec2-52-21-7-196.compute-1.amazonaws.com:3000/api';
   constructor(private http: HttpClient) {
 
     if(sessionStorage.getItem('userInfo'))
